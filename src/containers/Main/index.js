@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import BoardCard from '../../components/BoardCard';
+
+import './styles.css';
 
 class Main extends Component {
   render() {
     return (
-      <div className="board">
-        <div>Main component</div>
-
-        <Link to="/board">Board</Link>
+      <div className="main">
+        <BoardCard />
+        <BoardCard />
       </div>
     );
   }
