@@ -1,2 +1,14 @@
 .main {
-  display: flex; }
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px; }
+  .main__title {
+    width: 100%;
+    text-align: left; }
+    .main__title > h2 {
+      padding-left: 15px; }
+  .main__boards {
+    display: flex; }

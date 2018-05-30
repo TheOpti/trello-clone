@@ -7,8 +7,14 @@ class Main extends Component {
   render() {
     return (
       <div className="main">
-        <BoardCard />
-        <BoardCard />
+        <div className="main__title">
+          <h2>Your boards:</h2>
+          <hr />
+        </div>
+        <div className="main__boards">
+          <BoardCard />
+          <BoardCard />
+        </div>
       </div>
     );
   }
