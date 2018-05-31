@@ -14,6 +14,9 @@ class Main extends Component {
         <div className="main__boards">
           <BoardCard />
           <BoardCard />
+          <div className="card mb-3 main__create-new">
+            <h5>Create new...</h5>
+          </div>
         </div>
       </div>
     );

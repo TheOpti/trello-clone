@@ -1,7 +1,6 @@
 .board-card {
-  width: 200px;
-  margin: 10px 15px;
-  background-color: red; }
+  width: 230px;
+  margin: 10px 15px; }
   .board-card__row {
     display: flex;
     justify-content: space-between; }
