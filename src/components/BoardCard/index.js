@@ -10,7 +10,7 @@ class BoardCard extends Component {
 
     return (
       <div className="card bg-light mb-3 board-card" style={{maxWidth: '18rem'}}>
-        <div className="card-header">
+        <div className="card-header text-center">
           <h5 className="card-title">Light card title</h5>
         </div>
         <div className="card-body">
