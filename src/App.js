@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import {
   BrowserRouter as Router,
   Route,
-  Redirect
+  Redirect,
+  Switch
 } from "react-router-dom";
 import logo from './logo.svg';
 import Main from './containers/Main/index';
@@ -20,9 +21,11 @@ class App extends Component {
             <h1 className="app-title">Welcome to React</h1>
           </header>
           <div className="app__view">
-            <Redirect from="/" to="main" />
-            <Route path="/main" component={Main} />
-            <Route path="/board" component={Board} />
+            <Switch>
+              <Route path="/main" component={Main} />
+              <Route path="/board" component={Board} />
+              <Redirect from="/" to="/main" />
+            </Switch>
           </div>
         </div>
       </Router>
