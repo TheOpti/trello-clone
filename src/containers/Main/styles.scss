@@ -6,15 +6,10 @@ $imdas: 20px;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
 
   &__title {
     width: 100%;
     text-align: left;
-
-    & > h2 {
-      padding-left: 15px;
-    }
   }
 
   &__boards {
