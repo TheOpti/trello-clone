@@ -16,7 +16,8 @@
     justify-content: center;
     transition: all 0.3s;
     color: #838c91;
-    background-color: #e2e4e6; }
+    background-color: #e2e4e6;
+    text-align: center; }
     .main__create-new:hover {
       color: #4d4d4d;
       background-color: #C5C6C7;
