@@ -1,6 +1,11 @@
 .board-card {
   width: 230px;
+  height: 250px;
   margin: 10px 15px; }
+  .board-card .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; }
   .board-card__row {
     display: flex;
     justify-content: space-between; }
