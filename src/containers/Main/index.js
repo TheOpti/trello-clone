@@ -41,9 +41,6 @@ class Main extends Component {
   render() {
     const { boards } = this.props;
 
-    console.log('boards: ', boards);
-
-
     return (
       <div className="main">
         <div className="main__title">
@@ -55,7 +52,7 @@ class Main extends Component {
             boards.map((board) => {
               return (
                 <BoardCard
-                  name={board.name}
+                  board={board}
                 />
               )
             })

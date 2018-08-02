@@ -5,10 +5,11 @@ import './styles.css';
 
 class BoardCard extends Component {
   render() {
-    const { name } = this.props;
+    const { board } = this.props;
+    const { name, lists } = board;
 
-    const noOfLists = Math.floor(Math.random() * 6) + 1;
-    const noOfItems = Math.floor(Math.random() * 16) + 10;
+    const noOfLists = lists.length;
+    const noOfItems = lists.reduce((prev, curr) => prev + curr.length, 0);
 
     return (
       <div className="card bg-light mb-3 board-card" style={{maxWidth: '18rem'}}>
