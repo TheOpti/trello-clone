@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import CustomModal from '../CustomModal';
 
-class AddNewBoardModal extends Component {
+class AddNewItemModal extends Component {
   state = {
     value: '',
   };
@@ -11,29 +11,31 @@ class AddNewBoardModal extends Component {
   };
 
   handleSaveNewBoard = () => {
-    this.props.saveNewBoard(this.state.value);
+    this.props.onAccept(this.state.value);
     this.setState({ value: '' });
   };
 
   render() {
     const {
+      title,
+      label,
       isOpen,
       onClose,
     } = this.props;
 
     return (
       <CustomModal
-        title="Create new board"
+        title={title}
         handleClose={onClose}
         handleSave={this.handleSaveNewBoard}
         isOpen={isOpen}
       >
         <div className="form-group">
-          <label>New board name</label>
+          <label>{ label }</label>
           <input
             type="text"
             className="form-control"
-            placeholder="Enter board name"
+            placeholder="Enter new name"
             value={this.state.value}
             onChange={this.handleChange}
           />
@@ -43,4 +45,4 @@ class AddNewBoardModal extends Component {
   }
 }
 
-export default AddNewBoardModal;
+export default AddNewItemModal;

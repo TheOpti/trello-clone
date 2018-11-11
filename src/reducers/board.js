@@ -18,11 +18,11 @@ const initialState = {
               entry: 'Go to gym'
             },
             {
-              id: '1',
+              id: '2',
               entry: 'Study hard'
             },
             {
-              id: '1',
+              id: '3',
               entry: 'Make homework'
             }
           ]
@@ -54,12 +54,15 @@ export const board = (state = initialState, action) => {
     }
 
     case BOARD_CREATE_NEW_LIST: {
-      return state.boards.map((board) => {
+      const updatedBoards = state.boards.map((board) => {
         if (board.id === action.boardId) {
           board.lists.push(action.list);
         }
 
-        return board;
+        return {
+          ...state,
+          boards: updatedBoards,
+        };
       });
     }
 

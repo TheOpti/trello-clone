@@ -13,8 +13,6 @@ class List extends Component {
       items = [],
     } = list;
 
-    console.log('List props ', this.props);
-
     return (
       <div className="list card bg-light">
         <div className="card-header">

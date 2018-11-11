@@ -5,24 +5,24 @@ import { createBoard } from '../../actions';
 
 import BoardCard from '../../components/BoardCard';
 import ScreenTitle from '../../components/ScreenTitle';
-import AddNewBoardModal from '../../components/AddNewBoardModal';
+import AddNewItemModal from '../../components/AddNewItemModal';
 
 import './styles.css';
 
 class Main extends Component {
   state = {
-    isAddNewBoardModalOpen: false,
+    isModalOpen: false,
   };
 
   openModal =() => {
     this.setState({
-      isAddNewBoardModalOpen: true,
+      isModalOpen: true,
     });
   };
 
   closeModal = () => {
     this.setState({
-      isAddNewBoardModalOpen: false,
+      isModalOpen: false,
     });
   };
 
@@ -55,10 +55,12 @@ class Main extends Component {
             <h5>Create new...</h5>
           </div>
         </div>
-        <AddNewBoardModal
-          isOpen={this.state.isAddNewBoardModalOpen}
+        <AddNewItemModal
+          title="Create new board"
+          label="New board name"
+          isOpen={this.state.isModalOpen}
           onClose={this.closeModal}
-          saveNewBoard={this.saveNewBoard}
+          onAccept={this.saveNewBoard}
         />
       </div>
     );

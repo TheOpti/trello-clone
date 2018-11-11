@@ -19,7 +19,7 @@ export const createBoard = (boardName) => {
 
 export const BOARD_CREATE_NEW_LIST = 'BOARD_CREATE_NEW_LIST';
 
-export const createListInBoard = (boardId, listTitle) => {
+export const createNewList = (boardId, listTitle) => {
   const newList = {
     id: uuidv1(),
     title: listTitle,

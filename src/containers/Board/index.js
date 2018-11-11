@@ -2,14 +2,36 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { createListInBoard } from '../../actions';
+import { createNewList } from '../../actions';
 
 import ScreenTitle from '../../components/ScreenTitle';
 import List from "../../components/List";
+import AddNewItemModal from "../../components/AddNewItemModal";
 
 import './styles.css';
 
 class Board extends Component {
+  state = {
+    isModalOpen: false,
+  };
+
+  openModal =() => {
+    this.setState({
+      isModalOpen: true,
+    });
+  };
+
+  closeModal = () => {
+    this.setState({
+      isModalOpen: false,
+    });
+  };
+
+  addNewList = (listName) => {
+    this.closeModal();
+    this.props.createNewList(this.props.board.id, listName);
+  };
+
   render() {
     const {
       board = {},
@@ -36,10 +58,17 @@ class Board extends Component {
               )
             })
           }
-          <div className="board__add-new-list">
+          <div className="board__add-new-list" onClick={this.openModal}>
             Add new list...
           </div>
         </div>
+        <AddNewItemModal
+          title="Add new list to this board"
+          label="New list name"
+          isOpen={this.state.isModalOpen}
+          onClose={this.closeModal}
+          onAccept={this.addNewList}
+        />
         <Link to="/main">Main</Link>
       </div>
     );
@@ -53,7 +82,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = {
-  createListInBoard,
+  createNewList,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Board);
