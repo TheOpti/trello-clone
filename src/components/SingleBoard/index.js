@@ -4,26 +4,24 @@ import './styles.css';
 
 class SingleBoard extends Component {
   render() {
+    const {
+      title,
+      items = [],
+    } = this.props;
 
     return (
-      <div className="card bg-light single-board">
+      <div className="single-board card bg-light">
         <div className="card-header">
-          Header
+          { title }
         </div>
         <div className="single-board__body">
-          <div className="single-board__entry">
-            Usu id nobis cetero, per aeque denique definitionem eu.
-          </div>
-          <div className="single-board__entry">
-            A simple secondary alert—check it out!
-          </div>
-          <div className="single-board__entry">
-            Atqui ancillae consectetuer at qui. An qui graecis
-            laboramus deseruisse, eum noluisse deseruisse necessitatibus in.
-          </div>
-          <div className="single-board__entry">
-            Lorem ipsum dolor sit amet
-          </div>
+          { items.map((item) => {
+            return (
+              <div className="single-board__entry" key={item.id}>
+                { item.entry }
+              </div>
+            )
+          })}
         </div>
       </div>
     );

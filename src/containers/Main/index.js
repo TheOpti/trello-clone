@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { createBoard } from '../../actions';
 
 import BoardCard from '../../components/BoardCard';
+import ScreenTitle from '../../components/ScreenTitle';
 import AddNewBoardModal from '../../components/AddNewBoardModal';
 
 import './styles.css';
@@ -43,10 +44,9 @@ class Main extends Component {
 
     return (
       <div className="main">
-        <div className="main__title">
-          <h2>Your boards:</h2>
-          <hr />
-        </div>
+        <ScreenTitle
+          title="Your boards:"
+        />
         <div className="main__boards">
           {
             boards.map((board) => {
