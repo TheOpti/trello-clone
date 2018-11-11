@@ -6,13 +6,13 @@ import './styles.css';
 class BoardCard extends Component {
   render() {
     const { board } = this.props;
-    const { name, lists } = board;
+    const { id, name, lists } = board;
 
     const noOfLists = lists.length;
-    const noOfItems = lists.reduce((prev, curr) => prev + curr.length, 0);
+    const noOfItems = lists.reduce((prev, curr) => prev + curr.items.length, 0);
 
     return (
-      <div className="card bg-light mb-3 board-card" style={{maxWidth: '18rem'}}>
+      <div className="card bg-light mb-3 board-card">
         <div className="card-header text-center">
           <h5 className="card-title">{ name }</h5>
         </div>
@@ -28,9 +28,9 @@ class BoardCard extends Component {
             </div>
           </div>
           <div className="board-card__button-row">
-            <Link to="/board">
+            <Link to={`/board/${id}`}>
               <button type="button" className="btn btn-info">
-                Board
+                Go to board
               </button>
             </Link>
           </div>

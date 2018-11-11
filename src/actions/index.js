@@ -1,5 +1,7 @@
 import uuidv1 from 'uuid/v1';
-import actionTypes from '../actionTypes';
+
+
+export const BOARD_CREATE_NEW_BOARD = 'BOARD_CREATE_NEW_BOARD';
 
 export const createBoard = (boardName) => {
   const newBoard = {
@@ -9,7 +11,24 @@ export const createBoard = (boardName) => {
   };
 
   return {
-    type: actionTypes.BOARD_CREATE_NEW_BOARD,
+    type: BOARD_CREATE_NEW_BOARD,
     board: newBoard,
+  }
+};
+
+
+export const BOARD_CREATE_NEW_LIST = 'BOARD_CREATE_NEW_LIST';
+
+export const createListInBoard = (boardId, listTitle) => {
+  const newList = {
+    id: uuidv1(),
+    title: listTitle,
+    items: [],
+  };
+
+  return {
+    type : BOARD_CREATE_NEW_LIST,
+    list: newList,
+    boardId,
   }
 };

@@ -10,34 +10,26 @@ import AddNewBoardModal from '../../components/AddNewBoardModal';
 import './styles.css';
 
 class Main extends Component {
-  constructor(...args) {
-    super(...args);
+  state = {
+    isAddNewBoardModalOpen: false,
+  };
 
-    this.state = {
-      isAddNewBoardModalOpen: false,
-    };
-
-    this.openModal = this.openModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
-    this.saveNewBoard = this.saveNewBoard.bind(this);
-  }
-
-  openModal() {
+  openModal =() => {
     this.setState({
       isAddNewBoardModalOpen: true,
     });
-  }
+  };
 
-  closeModal() {
+  closeModal = () => {
     this.setState({
       isAddNewBoardModalOpen: false,
     });
-  }
+  };
 
-  saveNewBoard(boardName) {
+  saveNewBoard = (boardName) => {
     this.closeModal();
     this.props.createBoard(boardName);
-  }
+  };
 
   render() {
     const { boards } = this.props;
@@ -49,13 +41,12 @@ class Main extends Component {
         />
         <div className="main__boards">
           {
-            boards.map((board) => {
-              return (
-                <BoardCard
-                  board={board}
-                />
-              )
-            })
+            boards.map(board => (
+              <BoardCard
+                key={board.id}
+                board={board}
+              />
+            ))
           }
           <div
             className="card mb-3 main__create-new board-card"
@@ -79,6 +70,7 @@ const mapStateToProps = (state) => {
     boards: state.board.boards,
   }
 };
+
 const mapDispatchToProps = {
   createBoard,
 };

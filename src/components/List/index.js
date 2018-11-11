@@ -2,22 +2,28 @@ import React, { Component } from 'react';
 
 import './styles.css';
 
-class SingleBoard extends Component {
+class List extends Component {
   render() {
+    const {
+      list = [],
+    } = this.props;
+
     const {
       title,
       items = [],
-    } = this.props;
+    } = list;
+
+    console.log('List props ', this.props);
 
     return (
-      <div className="single-board card bg-light">
+      <div className="list card bg-light">
         <div className="card-header">
           { title }
         </div>
-        <div className="single-board__body">
+        <div className="list__body">
           { items.map((item) => {
             return (
-              <div className="single-board__entry" key={item.id}>
+              <div className="list__entry" key={item.id}>
                 { item.entry }
               </div>
             )
@@ -28,4 +34,4 @@ class SingleBoard extends Component {
   }
 }
 
-export default SingleBoard;
+export default List;

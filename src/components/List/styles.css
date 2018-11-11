@@ -1,11 +1,9 @@
-.single-board {
+.list {
   width: 280px;
-  display: inline-block; }
-  .single-board:not(:first-of-type):not(:last-of-type) {
-    margin: 0 8px; }
-  .single-board__body {
+  margin: 10px 15px; }
+  .list__body {
     padding: 8px; }
-  .single-board__entry {
+  .list__entry {
     color: #383d41;
     border-color: #d6d8db;
     margin-bottom: 8px;
@@ -14,6 +12,6 @@
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.5s, box-shadow 0.5s; }
-    .single-board__entry:hover {
+    .list__entry:hover {
       background-color: #e2e3e5;
       box-shadow: 0 0 3px 0 #b38a8a; }

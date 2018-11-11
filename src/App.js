@@ -23,7 +23,7 @@ class App extends Component {
           <div className="app__view">
             <Switch>
               <Route path="/main" component={Main} />
-              <Route path="/board" component={Board} />
+              <Route path="/board/:id" component={Board} />
               <Redirect from="/" to="/main" />
             </Switch>
           </div>

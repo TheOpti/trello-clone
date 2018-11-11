@@ -2,27 +2,24 @@ import React, { Component } from 'react';
 import CustomModal from '../CustomModal';
 
 class AddNewBoardModal extends Component {
-  constructor(...args) {
-    super(...args);
+  state = {
+    value: '',
+  };
 
-    this.state = {
-      value: '',
-    };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSaveNewBoard = this.handleSaveNewBoard.bind(this);
-  }
-
-  handleChange(event) {
+  handleChange = (event)  => {
     this.setState({value: event.target.value});
-  }
+  };
 
-  handleSaveNewBoard() {
+  handleSaveNewBoard = () => {
     this.props.saveNewBoard(this.state.value);
-  }
+    this.setState({ value: '' });
+  };
 
   render() {
-    const { isOpen, onClose } = this.props;
+    const {
+      isOpen,
+      onClose,
+    } = this.props;
 
     return (
       <CustomModal
