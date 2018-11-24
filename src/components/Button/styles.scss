@@ -1,0 +1,40 @@
+.button {
+  min-height: 42px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: color .4s ease-in-out, background-color .4s ease-in-out;
+  padding: 0 20px;
+
+  &:focus {
+    outline: none;
+  }
+
+  &--primary {
+    color: #fff;
+    background-color: #17a2b8;
+
+    &:hover {
+      background-color: #138496;
+    }
+  }
+
+  &--secondary {
+    color: #fff;
+    background-color: #6c757d;
+
+    &:hover {
+      background-color: #5a6268;
+    }
+  }
+
+  &--transparent {
+    color: #6c757d;
+    background-color: transparent;
+
+    &:hover {
+      color: #5a6268;
+    }
+  }
+}

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import Button from '../Button';
+
 import './styles.css';
 
 class CustomModal extends Component {
@@ -20,20 +22,27 @@ class CustomModal extends Component {
             <h5 className="modal-title">
               { title }
             </h5>
-            <button type="button" className="close" onClick={handleClose}>
-              <span>&times;</span>
-            </button>
+            <Button
+              handleClick={handleClose}
+              label="&times;"
+              color="transparent"
+              className="custom-modal__close-btn"
+            />
           </div>
           <div className="modal-body">
             { this.props.children }
           </div>
           <div className="modal-footer">
-            <button type="button" className="btn btn-secondary" onClick={handleClose}>
-              Close
-            </button>
-            <button type="button" className="btn btn-primary" onClick={handleSave}>
-              Save changes
-            </button>
+            <Button
+              handleClick={handleClose}
+              label="Close"
+              color="secondary"
+            />
+            <Button
+              handleClick={handleSave}
+              label="Save changes"
+              color="primary"
+            />
           </div>
         </div>
       </div>

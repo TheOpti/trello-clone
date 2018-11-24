@@ -12,6 +12,10 @@
   align-items: center;
   justify-content: center;
 
+  &__close-btn {
+    font-size: 26px;
+  }
+
   &__content {
     width: 100%;
     max-width: 650px;

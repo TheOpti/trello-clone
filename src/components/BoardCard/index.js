@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+import Button from '../Button';
+
 import './styles.css';
 
 class BoardCard extends Component {
@@ -29,9 +31,10 @@ class BoardCard extends Component {
           </div>
           <div className="board-card__button-row">
             <Link to={`/board/${id}`}>
-              <button type="button" className="btn btn-info">
-                Go to board
-              </button>
+              <Button
+                label="Go to board"
+                color="primary"
+              />
             </Link>
           </div>
         </div>

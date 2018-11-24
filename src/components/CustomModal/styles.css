@@ -11,6 +11,8 @@
   display: flex;
   align-items: center;
   justify-content: center; }
+  .custom-modal__close-btn {
+    font-size: 26px; }
   .custom-modal__content {
     width: 100%;
     max-width: 650px;
