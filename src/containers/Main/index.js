@@ -49,10 +49,10 @@ class Main extends Component {
             ))
           }
           <div
-            className="card mb-3 main__create-new board-card"
+            className="main__create-new"
             onClick={this.openModal}
           >
-            <h5>Create new...</h5>
+            Create new...
           </div>
         </div>
         <AddNewItemModal
