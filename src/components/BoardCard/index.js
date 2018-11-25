@@ -14,11 +14,13 @@ class BoardCard extends Component {
     const noOfItems = lists.reduce((prev, curr) => prev + curr.items.length, 0);
 
     return (
-      <div className="card bg-light mb-3 board-card">
-        <div className="card-header text-center">
-          <h5 className="card-title">{ name }</h5>
+      <div className="board-card">
+        <div className="board-card__header">
+          <h5 className="board-card__header-title">
+            { name }
+          </h5>
         </div>
-        <div className="card-body">
+        <div className="board-card__body">
           <div>
             <div className="board-card__row">
               <div>No. of lists:</div>
@@ -32,6 +34,7 @@ class BoardCard extends Component {
           <div className="board-card__button-row">
             <Link to={`/board/${id}`}>
               <Button
+                className="board-card__button"
                 label="Go to board"
                 color="primary"
               />
