@@ -5,36 +5,60 @@ import Button from '../Button';
 import './styles.css';
 
 class CustomModal extends Component {
+  state = {
+    isClosing: false,
+  };
+
+  closeModal = () => {
+    this.setState({ isClosing: true });
+
+    setTimeout(() => {
+      const { handleClose } = this.props;
+      handleClose();
+
+      this.setState({ isClosing: false });
+    }, 300);
+  };
+
   render() {
     const {
       title,
       handleSave,
-      handleClose,
       isOpen,
     } = this.props;
 
+    const {
+      isClosing
+    } = this.state;
+
+    console.log('modal render isClosing ', isClosing);
+
     if (!isOpen) return null;
+
+    const modalContentClass = 'custom-modal__content';
+    const modalStateClass = isClosing ? `${modalContentClass}--closed` : '';
+    const modalClasses = `custom-modal__content ${modalStateClass}`;
 
     return (
       <div className="custom-modal">
-        <div className="custom-modal__content">
-          <div className="modal-header">
-            <h5 className="modal-title">
+        <div className={modalClasses}>
+          <div className="custom-modal__header">
+            <h5>
               { title }
             </h5>
             <Button
-              handleClick={handleClose}
+              handleClick={this.closeModal}
               label="&times;"
               color="transparent"
               className="custom-modal__close-btn"
             />
           </div>
-          <div className="modal-body">
+          <div className="custom-modal__body">
             { this.props.children }
           </div>
-          <div className="modal-footer">
+          <div className="custom-modal__footer">
             <Button
-              handleClick={handleClose}
+              handleClick={this.closeModal}
               label="Close"
               color="secondary"
             />

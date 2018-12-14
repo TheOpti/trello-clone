@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 import './styles.css';
 
 function Button({label, handleClick, color, className = ''}) {
-  console.log('Button component');
-
   const btnClasses = `button button--${color} ${className}`;
 
   return (
@@ -21,7 +19,7 @@ function Button({label, handleClick, color, className = ''}) {
 Button.propTypes = {
   label: PropTypes.string,
   color: PropTypes.oneOf(['primary', 'secondary', 'transparent']),
-  handleClick: PropTypes.string,
+  handleClick: PropTypes.func,
   className: PropTypes.string,
 };
 
