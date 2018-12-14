@@ -8,7 +8,8 @@
     width: 100%;
     text-align: left; }
   .main__boards {
-    display: flex; }
+    display: flex;
+    margin: 0 -15px; }
   .main__create-new {
     margin: 10px 15px;
     width: 230px;

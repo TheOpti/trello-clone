@@ -5,11 +5,13 @@
 
   &__boards-wrapper {
     display: flex;
+    align-items: flex-start;
+    margin: 0 -15px;
   }
 
   &__add-new-list {
     width: 280px;
-    height: 32px;
+    height: 60px;
     background-color: #f8f9fa;
     box-shadow: 0 0 3px 0 rgba(179, 138, 138, 0.7);
     border-radius: 5px;

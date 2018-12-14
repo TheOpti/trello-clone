@@ -14,8 +14,8 @@ class List extends Component {
     } = list;
 
     return (
-      <div className="list card bg-light">
-        <div className="card-header">
+      <div className="list">
+        <div className="list__header">
           { title }
         </div>
         <div className="list__body">
@@ -26,6 +26,9 @@ class List extends Component {
               </div>
             )
           })}
+          <div className="list__add-new-item">
+            Add new item...
+          </div>
         </div>
       </div>
     );
