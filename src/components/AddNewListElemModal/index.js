@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import CustomModal from '../CustomModal';
 
 
-class AddNewItemModal extends Component {
+class AddNewListElemModal extends Component {
   state = {
     value: '',
   };
@@ -11,32 +11,30 @@ class AddNewItemModal extends Component {
     this.setState({value: event.target.value});
   };
 
-  handleSaveNewBoard = () => {
+  handleSaveNewListElem = () => {
     this.props.onAccept(this.state.value);
     this.setState({ value: '' });
   };
 
   render() {
     const {
-      title,
-      label,
       isOpen,
       onClose,
     } = this.props;
 
     return (
       <CustomModal
-        title={title}
+        title="Add new list element"
         handleClose={onClose}
-        handleSave={this.handleSaveNewBoard}
+        handleSave={this.handleSaveNewListElem}
         isOpen={isOpen}
       >
         <div className="form-group">
-          <label>{ label }</label>
+          <label>Element's name</label>
           <input
             type="text"
             className="form-control"
-            placeholder="Enter new name"
+            placeholder="Enter new list item name"
             value={this.state.value}
             onChange={this.handleChange}
           />
@@ -46,4 +44,4 @@ class AddNewItemModal extends Component {
   }
 }
 
-export default AddNewItemModal;
+export default AddNewListElemModal;

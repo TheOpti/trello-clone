@@ -32,3 +32,20 @@ export const createNewList = (boardId, listTitle) => {
     boardId,
   }
 };
+
+
+export const BOARD_ADD_ELEM_TO_LIST = 'BOARD_ADD_ELEM_TO_LIST';
+
+export const createNewElemInList = (boardId, listId, elemTitle) => {
+  const newElem = {
+    id: uuidv1(),
+    entry: elemTitle,
+  };
+
+  return {
+    type: BOARD_ADD_ELEM_TO_LIST,
+    newElem,
+    boardId,
+    listId,
+  }
+};

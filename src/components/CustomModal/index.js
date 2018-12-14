@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-
 import Button from '../Button';
 
 import './styles.css';
+
 
 class CustomModal extends Component {
   state = {
@@ -30,8 +30,6 @@ class CustomModal extends Component {
     const {
       isClosing
     } = this.state;
-
-    console.log('modal render isClosing ', isClosing);
 
     if (!isOpen) return null;
 

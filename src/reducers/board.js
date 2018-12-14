@@ -1,7 +1,9 @@
 import {
   BOARD_CREATE_NEW_BOARD,
   BOARD_CREATE_NEW_LIST,
+  BOARD_ADD_ELEM_TO_LIST,
 } from '../actions';
+
 
 const initialState = {
   boards: [
@@ -59,11 +61,41 @@ export const board = (state = initialState, action) => {
           board.lists.push(action.list);
         }
 
-        return {
-          ...state,
-          boards: updatedBoards,
-        };
+        return board;
       });
+
+      return {
+        ...state,
+        boards: updatedBoards,
+      };
+    }
+
+
+    case BOARD_ADD_ELEM_TO_LIST: {
+      const {
+        newElem,
+        boardId,
+        listId,
+      } = action;
+
+      const updatedBoards = state.boards.map((board) => {
+        if (board.id === boardId) {
+          board.lists.map((list) => {
+            if (list.id === listId) {
+              list.items.push(newElem);
+            }
+
+            return list;
+          });
+        }
+
+       return board;
+      });
+
+      return {
+        ...state,
+        boards: updatedBoards,
+      };
     }
 
 

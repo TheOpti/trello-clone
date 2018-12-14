@@ -2,34 +2,57 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { createNewList } from '../../actions';
+import {
+  createNewList,
+  createNewElemInList,
+} from '../../actions';
 
 import ScreenTitle from '../../components/ScreenTitle';
-import List from "../../components/List";
-import AddNewItemModal from "../../components/AddNewItemModal";
+import List from '../../components/List';
+import AddNewItemModal from '../../components/AddNewItemModal';
+import AddNewListElemModal from '../../components/AddNewListElemModal';
 
 import './styles.css';
 
+
 class Board extends Component {
   state = {
-    isModalOpen: false,
+    isNewItemModalOpen: false,
+    isNewListElemModalOpen: false,
+    listIdToAddElem: null,
   };
 
-  openModal =() => {
+  openNewItemModal = () => {
     this.setState({
-      isModalOpen: true,
+      isNewItemModalOpen: true,
     });
   };
 
-  closeModal = () => {
+  openNewListElemModal = (listId) => {
     this.setState({
-      isModalOpen: false,
+      isNewListElemModalOpen: true,
+      listIdToAddElem: listId,
+    });
+  };
+
+  closeModals = () => {
+    this.setState({
+      isNewItemModalOpen: false,
+      isNewListElemModalOpen: false,
+      listIdToAddElem: null,
     });
   };
 
   addNewList = (listName) => {
-    this.closeModal();
+    this.closeModals();
     this.props.createNewList(this.props.board.id, listName);
+  };
+
+  addNewListElem = (elemTitle) => {
+    this.closeModals();
+    const { listIdToAddElem } = this.state;
+
+    this.props.createNewElemInList(this.props.board.id, listIdToAddElem, elemTitle);
   };
 
   render() {
@@ -54,22 +77,30 @@ class Board extends Component {
                 <List
                   list={list}
                   key={list.id}
+                  openNewListElemModal={this.openNewListElemModal}
                 />
               )
             })
           }
-          <div className="board__add-new-list" onClick={this.openModal}>
+          <div className="board__add-new-list" onClick={this.openNewItemModal}>
             Add new list...
           </div>
         </div>
         <AddNewItemModal
           title="Add new list to this board"
           label="New list name"
-          isOpen={this.state.isModalOpen}
-          onClose={this.closeModal}
+          isOpen={this.state.isNewItemModalOpen}
+          onClose={this.closeModals}
           onAccept={this.addNewList}
         />
-        <Link to="/main">Main</Link>
+        <AddNewListElemModal
+          isOpen={this.state.isNewListElemModalOpen}
+          onClose={this.closeModals}
+          onAccept={this.addNewListElem}
+        />
+        <Link to="/main">
+          Main
+        </Link>
       </div>
     );
   }
@@ -83,6 +114,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = {
   createNewList,
+  createNewElemInList,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Board);

@@ -3,6 +3,13 @@ import React, { Component } from 'react';
 import './styles.css';
 
 class List extends Component {
+
+  addNewItem = () => {
+    const { openNewListElemModal, list } = this.props;
+
+    openNewListElemModal(list.id);
+  };
+
   render() {
     const {
       list = [],
@@ -26,7 +33,7 @@ class List extends Component {
               </div>
             )
           })}
-          <div className="list__add-new-item">
+          <div className="list__add-new-item" onClick={this.addNewItem}>
             Add new item...
           </div>
         </div>

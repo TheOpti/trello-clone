@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import './styles.css';
 
+
 function Button({label, handleClick, color, className = ''}) {
   const btnClasses = `button button--${color} ${className}`;
 
