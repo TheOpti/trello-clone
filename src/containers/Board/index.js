@@ -13,7 +13,7 @@ import modalsNames from '../../constants/modals';
 
 import ScreenTitle from '../../components/ScreenTitle';
 import List from '../../components/List';
-import AddNewItemModal from '../../components/AddNewItemModal';
+import AddNewListModal from '../../components/AddNewListModal';
 import AddNewListElemModal from '../../components/AddNewListElemModal';
 
 import './styles.css';
@@ -83,9 +83,7 @@ class Board extends Component {
             Add new list...
           </div>
         </div>
-        <AddNewItemModal
-          title="Add new list to this board"
-          label="New list name"
+        <AddNewListModal
           isOpen={isNewListModalOpen}
           onClose={this.closeModals}
           onAccept={this.addNewList}

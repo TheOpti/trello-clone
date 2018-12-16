@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 import CustomModal from '../CustomModal';
 
 
-class AddNewItemModal extends Component {
+class AddNewListModal extends Component {
   state = {
     value: '',
   };
@@ -18,21 +20,21 @@ class AddNewItemModal extends Component {
 
   render() {
     const {
-      title,
-      label,
       isOpen,
       onClose,
     } = this.props;
 
     return (
       <CustomModal
-        title={title}
+        title="Add new list to this board"
         handleClose={onClose}
         handleSave={this.handleSaveNewBoard}
         isOpen={isOpen}
       >
         <div className="form-group">
-          <label>{ label }</label>
+          <label>
+            New list name
+          </label>
           <input
             type="text"
             className="form-control"
@@ -46,4 +48,4 @@ class AddNewItemModal extends Component {
   }
 }
 
-export default AddNewItemModal;
+export default connect(null, null)(AddNewListModal);

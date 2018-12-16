@@ -9,6 +9,7 @@ const initialState = {
   modals: {
     [modalsNames.ADD_NEW_LIST_MODAL]: false,
     [modalsNames.ADD_NEW_LIST_ELEM_MODAL]: false,
+    [modalsNames.ADD_NEW_BOARD_MODAL]: false,
   },
 };
 
