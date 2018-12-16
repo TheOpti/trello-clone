@@ -49,3 +49,21 @@ export const createNewElemInList = (boardId, listId, elemTitle) => {
     listId,
   }
 };
+
+export const UI_MODAL_OPEN = 'UI_MODAL_OPEN';
+
+export const openModal = (modalName) => {
+  return {
+    type: UI_MODAL_OPEN,
+    modalName,
+  };
+};
+
+export const UI_MODAL_CLOSE = 'UI_MODAL_CLOSE';
+
+export const closeModal = (modalName) => {
+  return {
+    type: UI_MODAL_CLOSE,
+    modalName,
+  };
+};

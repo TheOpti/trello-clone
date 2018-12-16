@@ -1,6 +1,8 @@
-import { combineReducers } from "redux";
-import { board } from "./board";
+import { combineReducers } from 'redux';
+import { board } from './board';
+import { ui } from './ui';
 
 export default combineReducers({
-  board
+  board,
+  ui,
 });
