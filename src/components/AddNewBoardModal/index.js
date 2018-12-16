@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import CustomModal from '../CustomModal';
+import colors from '../../constants/colors';
 
+import CustomModal from '../CustomModal';
+import ColorBox from '../ColorBox';
+
+import './styles.css';
 
 class AddNewBoardModal extends Component {
   state = {
     value: '',
+    color: '',
   };
 
   handleChange = (event)  => {
@@ -32,7 +37,7 @@ class AddNewBoardModal extends Component {
         isOpen={isOpen}
       >
         <div className="form-group">
-          <label>
+          <label className="add-new-board-modal__label">
             Board name
           </label>
           <input
@@ -42,6 +47,18 @@ class AddNewBoardModal extends Component {
             value={this.state.value}
             onChange={this.handleChange}
           />
+          <label className="add-new-board-modal__label">
+            Select color
+          </label>
+          <div className="add-new-board-modal__colors">
+            {
+              Object.values(colors).map((color) => (
+                <ColorBox
+                  color={color}
+                />
+              ))
+            }
+          </div>
         </div>
       </CustomModal>
     );

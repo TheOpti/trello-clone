@@ -1,0 +1,15 @@
+.add-new-board-modal {
+  &__label {
+    &:not(:first-of-type) {
+      margin-top: 16px;
+    }
+  }
+
+  &__colors {
+    display: flex;
+
+    & > :not(:first-child) {
+      margin-left: 6px;
+    }
+  }
+}
