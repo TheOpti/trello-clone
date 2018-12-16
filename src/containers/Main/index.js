@@ -26,6 +26,7 @@ class Main extends Component {
       boards,
       isNewBoardModalOpen,
       openModal,
+      closeModal,
     } = this.props;
 
     return (
@@ -51,7 +52,7 @@ class Main extends Component {
         </div>
         <AddNewBoardModal
           isOpen={isNewBoardModalOpen}
-          onClose={this.closeModal}
+          onClose={closeModal}
           onAccept={this.saveNewBoard}
         />
       </div>
