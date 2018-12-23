@@ -5,21 +5,20 @@ import {
   Redirect,
   Switch
 } from "react-router-dom";
-import logo from './logo.svg';
+
 import Main from './containers/Main/index';
 import Board from './containers/Board/index';
+import Header from './components/Header';
 
 import './App.css';
+
 
 class App extends Component {
   render() {
     return (
       <Router>
         <div className="app">
-          <header className="app__header">
-            <img src={logo} className="app__logo" alt="logo" />
-            <h1 className="app-title">Welcome to React</h1>
-          </header>
+          <Header />
           <div className="app__view">
             <Switch>
               <Route path="/main" component={Main} />
