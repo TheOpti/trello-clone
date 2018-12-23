@@ -9,7 +9,6 @@ class ScreenTitle extends Component {
     return (
       <div className="screen-title">
         <h3>{ title }</h3>
-        <hr />
       </div>
     );
   }

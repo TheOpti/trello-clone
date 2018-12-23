@@ -11,7 +11,7 @@
     padding: 8px 15px;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.03);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.125); }
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
   .board-card__header-title {
     margin: 6px 0; }
   .board-card__body {
