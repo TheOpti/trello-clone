@@ -5,6 +5,7 @@ import colors from '../../constants/colors';
 
 import CustomModal from '../CustomModal';
 import ColorBox from '../ColorBox';
+import Input from '../Input';
 
 import './styles.css';
 
@@ -40,9 +41,8 @@ class AddNewBoardModal extends Component {
           <label className="add-new-board-modal__label">
             Board name
           </label>
-          <input
+          <Input
             type="text"
-            className="form-control"
             placeholder="Enter new name"
             value={this.state.value}
             onChange={this.handleChange}
