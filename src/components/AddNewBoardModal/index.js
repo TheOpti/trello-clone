@@ -7,7 +7,7 @@ import CustomModal from '../CustomModal';
 import ColorBox from '../ColorBox';
 import Input from '../Input';
 
-import './styles.css';
+import './styles.scss';
 
 class AddNewBoardModal extends Component {
   state = {

@@ -1,7 +1,0 @@
-.add-new-board-modal__label:not(:first-of-type) {
-  margin-top: 16px; }
-
-.add-new-board-modal__colors {
-  display: flex; }
-  .add-new-board-modal__colors > :not(:first-child) {
-    margin-left: 6px; }

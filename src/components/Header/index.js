@@ -2,7 +2,7 @@ import React from 'react';
 
 import logo from '../../logo.svg';
 
-import './styles.css';
+import './styles.scss';
 
 
 function Header() {

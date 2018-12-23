@@ -16,7 +16,7 @@ import List from '../../components/List';
 import AddNewListModal from '../../components/AddNewListModal';
 import AddNewListElemModal from '../../components/AddNewListElemModal';
 
-import './styles.css';
+import './styles.scss';
 
 
 class Board extends Component {

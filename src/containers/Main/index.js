@@ -13,7 +13,7 @@ import BoardCard from '../../components/BoardCard';
 import ScreenTitle from '../../components/ScreenTitle';
 import AddNewBoardModal from '../../components/AddNewBoardModal';
 
-import './styles.css';
+import './styles.scss';
 
 class Main extends Component {
   saveNewBoard = (boardName) => {

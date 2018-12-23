@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Button from '../Button';
 
-import './styles.css';
+import './styles.scss';
 
 
 class CustomModal extends Component {

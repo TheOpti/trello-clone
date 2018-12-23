@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import Button from '../Button';
 
-import './styles.css';
+import './styles.scss';
 
 class BoardCard extends Component {
   render() {
