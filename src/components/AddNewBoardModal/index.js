@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import colors from '../../constants/colors';
+import colors from '../../colors.scss';
 
 import CustomModal from '../CustomModal';
 import ColorBox from '../ColorBox';
@@ -16,12 +16,16 @@ class AddNewBoardModal extends Component {
   };
 
   handleChange = (event)  => {
-    this.setState({value: event.target.value});
+    this.setState({ value: event.target.value });
   };
 
   handleSaveNewBoard = () => {
     this.props.onAccept(this.state.value);
     this.setState({ value: '' });
+  };
+
+  selectColor = (color) => {
+    this.setState({ color, })
   };
 
   render() {
@@ -30,12 +34,15 @@ class AddNewBoardModal extends Component {
       onClose,
     } = this.props;
 
+    const { color } = this.state;
+
     return (
       <CustomModal
         title="Create new board"
         handleClose={onClose}
         handleSave={this.handleSaveNewBoard}
         isOpen={isOpen}
+        selectedColor={color}
       >
         <div className="form-group">
           <label className="add-new-board-modal__label">
@@ -52,11 +59,17 @@ class AddNewBoardModal extends Component {
           </label>
           <div className="add-new-board-modal__colors">
             {
-              Object.values(colors).map((color) => (
-                <ColorBox
-                  color={color}
-                />
-              ))
+              Object
+                .keys(colors)
+                .map((colorName) => (
+                  <ColorBox
+                    handleSelectColor={this.selectColor}
+                    isSelected={colorName === this.state.color}
+                    key={colorName}
+                    color={colors[colorName]}
+                    name={colorName}
+                  />
+                ))
             }
           </div>
         </div>

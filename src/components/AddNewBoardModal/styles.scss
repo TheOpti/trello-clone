@@ -7,9 +7,10 @@
 
   &__colors {
     display: flex;
+    margin: 10px 0;
 
     & > :not(:first-child) {
-      margin-left: 6px;
+      margin-left: 10px;
     }
   }
 }

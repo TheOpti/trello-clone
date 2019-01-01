@@ -25,6 +25,7 @@ class CustomModal extends Component {
       title,
       handleSave,
       isOpen,
+      selectedColor,
     } = this.props;
 
     const {
@@ -34,8 +35,9 @@ class CustomModal extends Component {
     if (!isOpen) return null;
 
     const modalContentClass = 'custom-modal__content';
+    const modalColor = selectedColor ? `color--${selectedColor}` : '';
     const modalStateClass = isClosing ? `${modalContentClass}--closed` : '';
-    const modalClasses = `custom-modal__content ${modalStateClass}`;
+    const modalClasses = `custom-modal__content ${modalStateClass} ${modalColor}`;
 
     return (
       <div className="custom-modal">
