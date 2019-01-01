@@ -1,13 +1,13 @@
+const webpack = require('webpack');
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 const config = {
-  mode: 'development',
   entry: './src/index.js',
   output: {
-    path: path.join(__dirname, 'dist'),
-    filename: '[name].[chunkhash].js',
+    path: path.join(__dirname, '..', '/dist'),
+    publicPath: '/',
+    filename: 'bundle.js'
   },
   module: {
     rules: [
@@ -52,12 +52,7 @@ const config = {
         ],
       },
     ],
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: 'public/index.html'
-    }),
-  ],
+  }
 };
 
 module.exports = config;

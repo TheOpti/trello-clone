@@ -4,13 +4,13 @@ import {
   Route,
   Redirect,
   Switch
-} from "react-router-dom";
+} from 'react-router-dom';
 
 import Main from './containers/Main/index';
 import Board from './containers/Board/index';
 import Header from './components/Header';
 
-import './App.css';
+import './App.scss';
 
 
 class App extends Component {
