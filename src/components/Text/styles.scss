@@ -1,0 +1,21 @@
+.text {
+  &__p {
+    margin: 4px 0;
+  }
+
+  &--light {
+    font-weight: 400;
+  }
+
+  &--regular {
+    font-weight: 500;
+  }
+
+  &--semibold {
+    font-weight: 600;
+  }
+
+  &--bold {
+    font-weight: 700;
+  }
+}

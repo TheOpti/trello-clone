@@ -6,6 +6,7 @@ import colors from '../../colors.scss';
 import CustomModal from '../CustomModal';
 import ColorBox from '../ColorBox';
 import Input from '../Input';
+import Text from '../Text';
 
 import './styles.scss';
 
@@ -45,18 +46,18 @@ class AddNewBoardModal extends Component {
         selectedColor={color}
       >
         <div className="form-group">
-          <label className="add-new-board-modal__label">
+          <Text as="p">
             Board name
-          </label>
+          </Text>
           <Input
             type="text"
             placeholder="Enter new name"
             value={this.state.value}
             onChange={this.handleChange}
           />
-          <label className="add-new-board-modal__label">
+          <Text as="p">
             Select color
-          </label>
+          </Text>
           <div className="add-new-board-modal__colors">
             {
               Object
