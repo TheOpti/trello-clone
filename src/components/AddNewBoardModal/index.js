@@ -12,7 +12,7 @@ import './styles.scss';
 class AddNewBoardModal extends Component {
   state = {
     value: '',
-    color: '',
+    color: Object.keys(colors)[0],
   };
 
   handleChange = (event)  => {
