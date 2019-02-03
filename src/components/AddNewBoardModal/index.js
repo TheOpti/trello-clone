@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
 import colors from '../../colors.scss';
-
-import CustomModal from '../CustomModal';
-import ColorBox from '../ColorBox';
-import Input from '../Input';
-import Text from '../Text';
-import Section from '../Section';
+import CustomModal from '@components/CustomModal';
+import ColorBox from '@components/ColorBox';
+import Input from '@components/Input';
+import Text from '@components/Text';
+import Section from '@components/Section';
 
 import './styles.scss';
 

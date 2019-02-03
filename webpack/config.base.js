@@ -9,6 +9,11 @@ const config = {
     publicPath: '/',
     filename: 'bundle.js'
   },
+  resolve: {
+    alias: {
+      '@components': path.resolve(__dirname, '../', 'src/components/'),
+    }
+  },
   module: {
     rules: [
       {
