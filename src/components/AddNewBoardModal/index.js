@@ -7,8 +7,10 @@ import CustomModal from '../CustomModal';
 import ColorBox from '../ColorBox';
 import Input from '../Input';
 import Text from '../Text';
+import Section from '../Section';
 
 import './styles.scss';
+
 
 class AddNewBoardModal extends Component {
   state = {
@@ -45,7 +47,7 @@ class AddNewBoardModal extends Component {
         isOpen={isOpen}
         selectedColor={color}
       >
-        <div className="form-group">
+        <Section>
           <Text as="p">
             Board name
           </Text>
@@ -55,6 +57,8 @@ class AddNewBoardModal extends Component {
             value={this.state.value}
             onChange={this.handleChange}
           />
+        </Section>
+        <Section>
           <Text as="p">
             Select color
           </Text>
@@ -73,7 +77,7 @@ class AddNewBoardModal extends Component {
                 ))
             }
           </div>
-        </div>
+        </Section>
       </CustomModal>
     );
   }
