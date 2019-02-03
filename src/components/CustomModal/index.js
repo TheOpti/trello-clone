@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Button from '../Button';
 
 import './styles.scss';
@@ -73,5 +74,16 @@ class CustomModal extends Component {
     );
   }
 }
+
+CustomModal.propTypes = {
+  title: PropTypes.string,
+  handleSave: PropTypes.func,
+  isOpen: PropTypes.bool,
+  selectedColor: PropTypes.string,
+};
+
+CustomModal.defaultProps = {
+  selectedColor: 'white',
+};
 
 export default CustomModal;
