@@ -4,6 +4,7 @@ import cx from 'classnames';
 
 import './styles.scss';
 
+
 class Text extends PureComponent {
   render() {
     const {

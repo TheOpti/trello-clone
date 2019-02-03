@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Button from '../Button';
+import Text from '../Text';
 
 import './styles.scss';
 
@@ -33,7 +34,9 @@ class CustomModal extends Component {
       isClosing
     } = this.state;
 
-    if (!isOpen) return null;
+    if (!isOpen) {
+      return null;
+    }
 
     const modalContentClass = 'custom-modal__content';
     const modalColor = selectedColor ? `color--${selectedColor}` : '';
@@ -44,9 +47,9 @@ class CustomModal extends Component {
       <div className="custom-modal">
         <div className={modalClasses}>
           <div className="custom-modal__header">
-            <h5>
+            <Text as="h5">
               { title }
-            </h5>
+            </Text>
             <Button
               handleClick={this.closeModal}
               label="&times;"

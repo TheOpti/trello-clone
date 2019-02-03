@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
 import CustomModal from '../CustomModal';
+import Section from '../Section';
+import Text from '../Text';
+import Input from '../Input';
 
 
 class AddNewListModal extends Component {
@@ -31,18 +33,17 @@ class AddNewListModal extends Component {
         handleSave={this.handleSaveNewBoard}
         isOpen={isOpen}
       >
-        <div className="form-group">
-          <label>
+        <Section>
+          <Text as="p">
             New list name
-          </label>
-          <input
+          </Text>
+          <Input
             type="text"
-            className="form-control"
             placeholder="Enter new name"
             value={this.state.value}
             onChange={this.handleChange}
           />
-        </div>
+        </Section>
       </CustomModal>
     );
   }

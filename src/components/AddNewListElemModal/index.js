@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import CustomModal from '../CustomModal';
+import Section from '../Section';
+import Text from '../Text';
+import Input from '../Input';
 
 
 class AddNewListElemModal extends Component {
@@ -29,16 +32,17 @@ class AddNewListElemModal extends Component {
         handleSave={this.handleSaveNewListElem}
         isOpen={isOpen}
       >
-        <div className="form-group">
-          <label>Element's name</label>
-          <input
+        <Section>
+          <Text as="p">
+            Element's name
+          </Text>
+          <Input
             type="text"
-            className="form-control"
-            placeholder="Enter new list item name"
+            placeholder="Enter new name"
             value={this.state.value}
             onChange={this.handleChange}
           />
-        </div>
+        </Section>
       </CustomModal>
     );
   }
