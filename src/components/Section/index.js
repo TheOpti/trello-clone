@@ -13,7 +13,10 @@ function Section({ children }) {
 }
 
 Section.propTypes = {
-  children: PropTypes.obj,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
+  ]).isRequired,
 };
 
 export default Section;

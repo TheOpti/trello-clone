@@ -41,7 +41,7 @@ class Text extends PureComponent {
 
 Text.propTypes = {
   className: PropTypes.string,
-  as: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'p', 'span', 'div']),
+  as: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'p', 'span', 'div']),
   light: PropTypes.bool,
   regular: PropTypes.bool,
   semibold: PropTypes.bool,
