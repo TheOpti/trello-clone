@@ -38,7 +38,10 @@ class VisibilityDropdown extends PureComponent {
   onVisibilityClick = (visibility) => {
     const { handleSelect } = this.props;
 
-    handleSelect(visibility);
+    if (handleSelect) {
+      handleSelect(visibility);
+    }
+    x
     this.closeDropdown();
   };
 
