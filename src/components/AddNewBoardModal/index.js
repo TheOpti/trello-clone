@@ -6,6 +6,7 @@ import ColorBox from '@components/ColorBox';
 import Input from '@components/Input';
 import Text from '@components/Text';
 import Section from '@components/Section';
+import VisibilityDropdown from '@components/VisibilityDropdown';
 
 import './styles.scss';
 
@@ -55,6 +56,12 @@ class AddNewBoardModal extends Component {
             value={this.state.value}
             onChange={this.handleChange}
           />
+        </Section>
+        <Section>
+          <Text as="p">
+            Visibility
+          </Text>
+          <VisibilityDropdown />
         </Section>
         <Section>
           <Text as="p">
