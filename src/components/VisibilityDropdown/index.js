@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
-import Text from '@components/Text';
+import VisibilityOption from '@components/VisibilityOption';
 
 import './styles.scss';
 
@@ -35,13 +35,10 @@ class VisibilityDropdown extends PureComponent {
     });
   };
 
-  onVisibilityClick = (visibility) => {
+  handleVisibilityClick = (visibility) => {
     const { handleSelect } = this.props;
 
-    if (handleSelect) {
-      handleSelect(visibility);
-    }
-
+    handleSelect(visibility);
     this.closeDropdown();
   };
 
@@ -52,7 +49,7 @@ class VisibilityDropdown extends PureComponent {
 
     const { isOpen } = this.state;
 
-    const title = selectedVisibility ? selectedVisibility : 'Select...';
+    const title = selectedVisibility ? selectedVisibility.title : 'Select...';
 
     return (
       <div className="visibility-dropdown">
@@ -64,17 +61,11 @@ class VisibilityDropdown extends PureComponent {
             {
               visibilityTypes.map((visibility) => {
                 return (
-                  <div
-                    className="visibility-dropdown__element"
-                    onClick={() => this.onVisibilityClick(visibility)}
-                  >
-                    <Text as="p" semibold>
-                      { visibility.title }
-                    </Text>
-                    <Text as="p" regular>
-                      { visibility.description }
-                    </Text>
-                  </div>
+                  <VisibilityOption
+                    key={visibility.id}
+                    visibility={visibility}
+                    onVisibilityClick={this.handleVisibilityClick}
+                  />
                 )
               })
             }
@@ -88,7 +79,11 @@ class VisibilityDropdown extends PureComponent {
 
 VisibilityDropdown.propTypes = {
   handleSelect: PropTypes.func,
-  selectedVisibility: PropTypes.string,
+  selectedVisibility: PropTypes.shape({
+    id: PropTypes.string,
+    title: PropTypes.string,
+    description: PropTypes.string
+  }),
 };
 
 export default VisibilityDropdown;

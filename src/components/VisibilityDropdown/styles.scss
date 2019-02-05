@@ -28,17 +28,4 @@
     border: 1px solid black;
     border-radius: 5px;
   }
-
-  &__element {
-    cursor: pointer;
-    padding: 4px 8px;
-    margin: 8px 0;
-    color: #495057;
-    transition: color .15s ease-in-out, background-color .15s ease-in-out;
-
-    &:hover {
-      color: #fff;
-      background-color: #17a2b8;
-    }
-  }
 }

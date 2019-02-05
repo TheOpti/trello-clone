@@ -15,19 +15,30 @@ class AddNewBoardModal extends Component {
   state = {
     value: '',
     color: Object.keys(colors)[0],
+    visibility: null,
   };
 
   handleChange = (event)  => {
     this.setState({ value: event.target.value });
   };
 
-  handleSaveNewBoard = () => {
-    this.props.onAccept(this.state.value);
-    this.setState({ value: '' });
-  };
-
   selectColor = (color) => {
     this.setState({ color, })
+  };
+
+  handleSelect = (visibility) => {
+    this.setState({
+      visibility,
+    })
+  };
+
+  handleSaveNewBoard = () => {
+    this.props.onAccept(this.state.value);
+    this.setState({
+      value: '',
+      visibility: null,
+      color: Object.keys(colors)[0],
+    });
   };
 
   render() {
@@ -36,7 +47,10 @@ class AddNewBoardModal extends Component {
       onClose,
     } = this.props;
 
-    const { color } = this.state;
+    const {
+      color,
+      visibility,
+    } = this.state;
 
     return (
       <CustomModal
@@ -61,7 +75,10 @@ class AddNewBoardModal extends Component {
           <Text as="p">
             Visibility
           </Text>
-          <VisibilityDropdown />
+          <VisibilityDropdown
+            handleSelect={this.handleSelect}
+            selectedVisibility={visibility}
+          />
         </Section>
         <Section>
           <Text as="p">
