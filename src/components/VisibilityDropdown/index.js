@@ -41,7 +41,7 @@ class VisibilityDropdown extends PureComponent {
     if (handleSelect) {
       handleSelect(visibility);
     }
-    x
+
     this.closeDropdown();
   };
 

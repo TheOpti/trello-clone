@@ -17,6 +17,8 @@ ReactDOM.render(
     document.getElementById('root')
 );
 
-module.hot.accept();
+if (process.env.NODE_ENV === 'development') {
+  module.hot.accept();
+}
 
 registerServiceWorker();
