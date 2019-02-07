@@ -1,18 +1,18 @@
+@import '~partials/variables';
+
 .board-card {
   width: 240px;
   height: 250px;
   margin: 10px 15px;
   display: flex;
   flex-direction: column;
-  background-color: #f8f9fa;
   border-radius: 6px;
-  border: 1px solid lightgray;
+  border: 1px solid $color-gray;
 
   &__header {
     padding: 8px 15px;
     text-align: center;
-    background-color: rgba(0, 0, 0, .03);
-    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    border-bottom: 1px solid $color-gray;
   }
 
   &__header-title {
@@ -30,6 +30,10 @@
   &__row {
     display: flex;
     justify-content: space-between;
+
+    &--visibility {
+      margin: 20px 0;
+    }
   }
 
   &__button {

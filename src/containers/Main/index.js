@@ -7,18 +7,21 @@ import {
   closeModal,
 } from '../../actions';
 
-import modalsNames from '../../constants/modals';
+import modalsNames from 'constants/modals';
 
-import BoardCard from '../../components/BoardCard';
-import ScreenTitle from '../../components/ScreenTitle';
-import AddNewBoardModal from '../../components/AddNewBoardModal';
+import BoardCard from 'components/BoardCard';
+import ScreenTitle from 'components/ScreenTitle';
+import AddNewBoardModal from 'components/AddNewBoardModal';
 
 import './styles.scss';
 
+
 class Main extends Component {
-  saveNewBoard = (boardName) => {
-    this.props.closeModal();
-    this.props.createBoard(boardName);
+  saveNewBoard = (board) => {
+    const { closeModal, createBoard } = this.props;
+
+    closeModal();
+    createBoard(board);
   };
 
   render() {

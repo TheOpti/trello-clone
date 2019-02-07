@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Button from '@components/Button';
-import Text from '@components/Text';
+import cx from 'classnames';
+import Button from 'components/Button';
+import Text from 'components/Text';
 
 import './styles.scss';
 
@@ -38,16 +39,19 @@ class CustomModal extends Component {
       return null;
     }
 
-    const modalContentClass = 'custom-modal__content';
-    const modalColor = selectedColor ? `color--${selectedColor}` : '';
-    const modalStateClass = isClosing ? `${modalContentClass}--closed` : '';
-    const modalClasses = `custom-modal__content ${modalStateClass} ${modalColor}`;
+    const classes = cx(
+      'custom-modal__content',
+      `color--${selectedColor}`,
+      {
+        'custom-modal__content--closed': isClosing,
+      }
+    );
 
     return (
       <div className="custom-modal">
-        <div className={modalClasses}>
+        <div className={classes}>
           <div className="custom-modal__header">
-            <Text as="h5">
+            <Text as="h3">
               { title }
             </Text>
             <Button

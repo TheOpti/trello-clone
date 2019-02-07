@@ -12,7 +12,6 @@ class Text extends PureComponent {
       as,
       light,
       regular,
-      semibold,
       bold,
       ...attributes
     } = this.props;
@@ -24,7 +23,6 @@ class Text extends PureComponent {
       {
         'text--light': light,
         'text--regular': regular,
-        'text--semibold': semibold,
         'text--bold': bold,
       },
     );
@@ -41,10 +39,9 @@ class Text extends PureComponent {
 
 Text.propTypes = {
   className: PropTypes.string,
-  as: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'p', 'span', 'div']),
+  as: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'p', 'span', 'div']),
   light: PropTypes.bool,
   regular: PropTypes.bool,
-  semibold: PropTypes.bool,
   bold: PropTypes.bool,
 };
 

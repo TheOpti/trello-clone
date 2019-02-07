@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Text from 'components/Text';
 
 import './styles.scss';
 
@@ -8,7 +9,9 @@ class ScreenTitle extends Component {
 
     return (
       <div className="screen-title">
-        <h3>{ title }</h3>
+        <Text as="h2">
+          { title }
+        </Text>
       </div>
     );
   }

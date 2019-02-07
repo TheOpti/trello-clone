@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import CustomModal from '@components/CustomModal';
-import Section from '@components/Section';
-import Text from '@components/Text';
-import Input from '@components/Input';
+import CustomModal from 'components/CustomModal';
+import Section from 'components/Section';
+import Text from 'components/Text';
+import Input from 'components/Input';
 
 
 class AddNewListElemModal extends Component {

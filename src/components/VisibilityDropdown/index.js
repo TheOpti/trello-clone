@@ -1,22 +1,10 @@
-import React, {PureComponent} from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import VisibilityOption from '@components/VisibilityOption';
+import visibilityTypes from 'constants/visibilityTypes';
+import VisibilityOption from 'components/VisibilityOption';
 
 import './styles.scss';
 
-
-const visibilityTypes = [
-  {
-    id: 'private',
-    title: 'Private',
-    description: 'This board is private',
-  },
-  {
-    id: 'public',
-    title: 'Public',
-    description: 'This board is open to everyone when link is shared.',
-  }
-];
 
 class VisibilityDropdown extends PureComponent {
   state = {

@@ -1,3 +1,5 @@
+@import '~partials/variables';
+
 .custom-modal {
   position: fixed;
   top: 0;
@@ -25,11 +27,12 @@
   }
 
   &__header {
+    color: $color-darkslate;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 16px;
-    border-bottom: 1px solid #e9ecef;
+    border-bottom: 1px solid $color-gray;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
   }
@@ -46,8 +49,7 @@
     transition: border 0.3s, color 0.3s;
 
     &:hover {
-      border: 2px solid #17394d;
-      color: #17394d;
+      border: 2px solid $color-darkslate;
     }
   }
 
@@ -60,7 +62,8 @@
     align-items: center;
     justify-content: flex-end;
     padding: 16px;
-    border-top: 1px solid #e9ecef;
+    color: $color-darkslate;
+    border-top: 1px solid $color-gray;
 
     & :not(:last-child) {
       margin-right: 5px;

@@ -10,6 +10,8 @@ const initialState = {
     {
       id: '1',
       name: 'Example board',
+      color: 'autumn',
+      visibility: 'private',
       lists: [
         {
           id: 'a',

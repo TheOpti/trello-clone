@@ -1,24 +1,43 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import cx from 'classnames';
 
-import Button from '@components/Button';
+import visibilityTypes from 'constants/visibilityTypes';
+import Button from 'components/Button';
+import Text from 'components/Text';
 
 import './styles.scss';
+
 
 class BoardCard extends Component {
   render() {
     const { board } = this.props;
-    const { id, name, lists } = board;
+    const {
+      id,
+      name,
+      lists,
+      color,
+      visibility,
+    } = board;
+
+    console.log('board ', board);
 
     const noOfLists = lists.length;
     const noOfItems = lists.reduce((prev, curr) => prev + curr.items.length, 0);
 
+    const classes = cx(
+      'board-card',
+      `color--${color}`,
+    );
+
+    const { title: visibilityName} = visibilityTypes.find(elem => elem.id === visibility);
+
     return (
-      <div className="board-card">
+      <div className={classes}>
         <div className="board-card__header">
-          <h5 className="board-card__header-title">
+          <Text as="h4" bold>
             { name }
-          </h5>
+          </Text>
         </div>
         <div className="board-card__body">
           <div>
@@ -30,6 +49,14 @@ class BoardCard extends Component {
               <div>No. of items:</div>
               <div>{ noOfItems }</div>
             </div>
+            {
+              visibilityName && (
+                <div className="board-card__row board-card__row--visibility">
+                  <div>Visibility</div>
+                  <div>{ visibilityName }</div>
+                </div>
+              )
+            }
           </div>
           <div className="board-card__button-row">
             <Link to={`/board/${id}`}>

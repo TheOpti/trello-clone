@@ -3,10 +3,11 @@ import uuidv1 from 'uuid/v1';
 
 export const BOARD_CREATE_NEW_BOARD = 'BOARD_CREATE_NEW_BOARD';
 
-export const createBoard = (boardName) => {
+export const createBoard = (board) => {
   const newBoard = {
+    ...board,
+    visibility: board.visibility.id,
     id: uuidv1(),
-    name: boardName,
     lists: [],
   };
 
@@ -50,6 +51,7 @@ export const createNewElemInList = (boardId, listId, elemTitle) => {
   }
 };
 
+
 export const UI_MODAL_OPEN = 'UI_MODAL_OPEN';
 
 export const openModal = (modalName) => {
@@ -58,6 +60,7 @@ export const openModal = (modalName) => {
     modalName,
   };
 };
+
 
 export const UI_MODAL_CLOSE = 'UI_MODAL_CLOSE';
 

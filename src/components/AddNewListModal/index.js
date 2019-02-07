@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import CustomModal from '@components/CustomModal';
-import Section from '@components/Section';
-import Text from '@components/Text';
-import Input from '@components/Input';
+import CustomModal from 'components/CustomModal';
+import Section from 'components/Section';
+import Text from 'components/Text';
+import Input from 'components/Input';
 
 
 class AddNewListModal extends Component {

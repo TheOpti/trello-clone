@@ -1,3 +1,5 @@
+@import '~partials/variables';
+
 .button {
   min-height: 42px;
   outline: none;
@@ -13,29 +15,25 @@
   }
 
   &--primary {
-    color: #fff;
-    background-color: #17a2b8;
+    color: $color-white;
+    background-color: $color-primary;
 
     &:hover {
-      background-color: #138496;
+      background-color: $color-primary-hover;
     }
   }
 
   &--secondary {
-    color: #fff;
-    background-color: #6c757d;
+    color: $color-white;
+    background-color: $color-secondary;
 
     &:hover {
-      background-color: #5a6268;
+      background-color: $color-secondary-hover;
     }
   }
 
   &--transparent {
-    color: #6c757d;
+    color: $color-darkslate;
     background-color: transparent;
-
-    &:hover {
-      color: #5a6268;
-    }
   }
 }

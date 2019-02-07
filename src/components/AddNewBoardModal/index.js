@@ -1,29 +1,29 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import colors from '../../colors.scss';
-import CustomModal from '@components/CustomModal';
-import ColorBox from '@components/ColorBox';
-import Input from '@components/Input';
-import Text from '@components/Text';
-import Section from '@components/Section';
-import VisibilityDropdown from '@components/VisibilityDropdown';
+import colors from 'partials/_variables.scss';
+import CustomModal from 'components/CustomModal';
+import ColorBox from 'components/ColorBox';
+import Input from 'components/Input';
+import Text from 'components/Text';
+import Section from 'components/Section';
+import VisibilityDropdown from 'components/VisibilityDropdown';
 
 import './styles.scss';
 
 
 class AddNewBoardModal extends Component {
   state = {
-    value: '',
+    name: '',
     color: Object.keys(colors)[0],
     visibility: null,
   };
 
   handleChange = (event)  => {
-    this.setState({ value: event.target.value });
+    this.setState({ name: event.target.value });
   };
 
   selectColor = (color) => {
-    this.setState({ color, })
+    this.setState({ color })
   };
 
   handleSelect = (visibility) => {
@@ -33,9 +33,11 @@ class AddNewBoardModal extends Component {
   };
 
   handleSaveNewBoard = () => {
-    this.props.onAccept(this.state.value);
+    const { onAccept } = this.props;
+    onAccept(this.state);
+
     this.setState({
-      value: '',
+      name: '',
       visibility: null,
       color: Object.keys(colors)[0],
     });

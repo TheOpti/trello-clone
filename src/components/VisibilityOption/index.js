@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Text from '@components/Text';
+import Text from 'components/Text';
 
 import './styles.scss';
 
@@ -17,7 +17,7 @@ function VisibilityOption({ visibility, onVisibilityClick}) {
       className="visibility-option"
       onClick={selectVisibility}
     >
-      <Text as="p" semibold>
+      <Text as="p" bold>
         { title }
       </Text>
       <Text as="p" regular>

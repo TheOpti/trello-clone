@@ -1,39 +1,33 @@
+@import '~partials/variables';
+
 .text {
   &__h1 {
-    font-size: 28px;
+    font-size: $font-xxl;
   }
 
   &__h2 {
-    font-size: 26px;
+    font-size: $font-xl;
   };
 
   &__h3 {
-    font-size: 24px;
+    font-size: $font-l;
   }
 
   &__h4 {
-    font-size: 22px;
-  }
-
-  &__h5 {
-    font-size: 20px;
+    font-size: $font-m;
   }
 
   &__p {
-    font-size: 16px;
+    font-size: $font-s;
     margin: 4px 0;
   }
 
   &--light {
-    font-weight: 400;
+    font-weight: 300;
   }
 
   &--regular {
-    font-weight: 500;
-  }
-
-  &--semibold {
-    font-weight: 600;
+    font-weight: 400;
   }
 
   &--bold {

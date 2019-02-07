@@ -11,7 +11,9 @@ const config = {
   },
   resolve: {
     alias: {
-      '@components': path.resolve(__dirname, '../', 'src/components/'),
+      'components': path.resolve(__dirname, '../', 'src', 'components'),
+      'partials': path.resolve(__dirname, '../', 'src', 'assets', 'partials'),
+      'constants': path.resolve(__dirname, '../', 'src', 'constants'),
     }
   },
   module: {

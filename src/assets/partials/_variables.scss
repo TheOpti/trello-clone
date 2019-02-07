@@ -1,0 +1,38 @@
+
+/* colors */
+$color-primary: #17a2b8;
+$color-primary-hover: #138496;
+$color-secondary: #6c757d;
+$color-secondary-hover: #5a6268;
+$color-lightgray: #e9ecef;
+$color-gray: #a4a9ae;
+$color-white: #fff;
+$color-darkslate: #323440;
+
+/* color for board */
+$boardColors: (
+  white: #FFF,
+  sky: #456d97,
+  stem: #80BD9E,
+  autumn: #763626,
+  shadow: #2A3132,
+  stone: #336B87,
+  meadow: #598234,
+);
+
+@each $name, $color in $boardColors {
+  .color--#{$name} {
+    background-color: lighten($color, 30%);
+  }
+
+  :export {
+    #{$name}: $color;
+  }
+}
+
+/* font sizes */
+$font-s: 16px;
+$font-m: 18px;
+$font-l: 22px;
+$font-xl: 26px;
+$font-xxl: 30px;

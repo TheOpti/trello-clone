@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import colors from '../../colors.scss';
+import colors from 'partials/_variables.scss';
 
 import './styles.scss';
 
