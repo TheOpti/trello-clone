@@ -50,7 +50,7 @@ class Main extends Component {
             className="main__create-new"
             onClick={openModal}
           >
-            Create new...
+            Create new board...
           </div>
         </div>
         <AddNewBoardModal

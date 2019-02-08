@@ -4,25 +4,28 @@ $color-primary: #17a2b8;
 $color-primary-hover: #138496;
 $color-secondary: #6c757d;
 $color-secondary-hover: #5a6268;
-$color-lightgray: #e9ecef;
-$color-gray: #a4a9ae;
+$color-lightgray: #f6f6f6;
 $color-white: #fff;
 $color-darkslate: #323440;
+$color-darkoverlay: rgba(0,0,0,.15);
+$color-lightenoverlay: rgba(255 , 255 , 255, .55);
 
 /* color for board */
 $boardColors: (
-  white: #FFF,
-  sky: #456d97,
-  stem: #80BD9E,
-  autumn: #763626,
-  shadow: #2A3132,
-  stone: #336B87,
-  meadow: #598234,
+  marine: #0079c5,
+  sandy: #d29034,
+  green-dark: #519839,
+  burgund: #b04632,
+  aubergine: #89609e,
+  pinky: #cd5a91,
+  green-light: #4bbf6b,
+  sky: #00aecc,
+  gray: #838c91
 );
 
 @each $name, $color in $boardColors {
   .color--#{$name} {
-    background-color: lighten($color, 30%);
+    background-color: $color;
   }
 
   :export {

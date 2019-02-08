@@ -20,8 +20,6 @@ class BoardCard extends Component {
       visibility,
     } = board;
 
-    console.log('board ', board);
-
     const noOfLists = lists.length;
     const noOfItems = lists.reduce((prev, curr) => prev + curr.items.length, 0);
 

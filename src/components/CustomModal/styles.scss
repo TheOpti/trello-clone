@@ -27,12 +27,13 @@
   }
 
   &__header {
-    color: $color-darkslate;
+    color: $color-lightgray;
+    background-color: $color-darkoverlay;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 16px;
-    border-bottom: 1px solid $color-gray;
+    border-bottom: 1px solid $color-lightgray;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
   }
@@ -47,13 +48,15 @@
     justify-content: center;
     border: 2px solid transparent;
     transition: border 0.3s, color 0.3s;
+    color: $color-lightgray;
 
     &:hover {
-      border: 2px solid $color-darkslate;
+      border: 2px solid $color-lightgray;
     }
   }
 
   &__body {
+    color: $color-lightgray;
     padding: 8px 16px;
   }
 
@@ -62,8 +65,8 @@
     align-items: center;
     justify-content: flex-end;
     padding: 16px;
-    color: $color-darkslate;
-    border-top: 1px solid $color-gray;
+    color: $color-lightgray;
+    border-top: 1px solid $color-lightgray;
 
     & :not(:last-child) {
       margin-right: 5px;

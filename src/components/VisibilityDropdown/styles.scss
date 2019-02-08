@@ -1,6 +1,10 @@
+@import '~partials/variables';
+
 .visibility-dropdown {
   position: relative;
-  color: #495057;
+  color: $color-lightgray;
+  background-color: $color-lightenoverlay;
+  border-radius: 5px;
 
   &__title {
     height: 38px;
@@ -9,12 +13,12 @@
     padding: 0 8px;
     cursor: pointer;
     transition: color .15s ease-in-out, background-color .15s ease-in-out;
-    border: 1px solid #ced4da;
     border-radius: 5px;
 
     &:hover {
-      color: #fff;
-      background-color: #17a2b8;
+      color: $color-darkslate;
+      background-color: $color-white;
+      border-color: $color-darkslate;
     }
   }
 
